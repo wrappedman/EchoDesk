@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8b4a4"/><stop offset=".45" stop-color="#edc8ad"/><stop offset="1" stop-color="#78958b"/></linearGradient>
+ <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4e6"/><stop offset="1" stop-color="#d9eef0"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#423a38" flood-opacity=".2"/></filter>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<circle cx="121" cy="138" r="98" fill="#f8e1cc" opacity=".48"/>
+<path d="M-20 366 Q128 313 262 370 T622 340 V640H-20Z" fill="#4e756d" opacity=".62"/>
+<path d="M-20 435 Q126 372 273 432 T622 404 V640H-20Z" fill="#344e4e" opacity=".62"/>
+<g filter="url(#shadow)">
+ <path d="M118 214 492 131 300 373 264 277Z" fill="url(#paper)"/>
+ <path d="M118 214 264 277 300 373 283 278Z" fill="#bed5d3"/>
+ <path d="M264 277 492 131 283 278Z" fill="#eff7ef"/>
+</g>
+<path d="M68 290 Q268 78 505 106" fill="none" stroke="#fff7ee" stroke-opacity=".58" stroke-width="2" stroke-dasharray="6 12"/>
+<text x="42" y="526" fill="#fff8f0" font-family="Arial,sans-serif" font-size="27" letter-spacing="6">ECHODESK SESSIONS</text>
+<text x="42" y="563" fill="#fff8f0" font-family="Arial,sans-serif" font-size="16" letter-spacing="4" opacity=".76">03 — PAPER PLANES</text>
+</svg>

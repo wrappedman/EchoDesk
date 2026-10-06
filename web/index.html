@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="theme-color" content="#191720">
+  <title>EchoDesk — your music, your space</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/echodesk-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="dark">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="window-shell" id="appShell">
+    <aside class="sidebar">
+      <div class="brand pywebview-drag-region">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="/assets/echodesk-icon.png" alt="">
+        </div>
+        <div class="brand-copy"><strong>EchoDesk</strong><span>PERSONAL SOUNDSPACE</span></div>
+      </div>
+
+      <div class="sidebar-scroll">
+        <p class="nav-caption">YOUR SPACE</p>
+        <nav class="nav-group" aria-label="Main navigation">
+          <button class="nav-item active" data-page="home"><span class="nav-icon" data-icon="home"></span><span>Home</span><span class="nav-arrow"></span></button>
+          <button class="nav-item" data-page="library"><span class="nav-icon" data-icon="library"></span><span>Library</span><span class="nav-count" id="navTrackCount">0</span></button>
+          <button class="nav-item" data-page="online"><span class="nav-icon" data-icon="search"></span><span>Online Search</span><span class="nav-pill-dot"></span></button>
+        </nav>
+
+        <p class="nav-caption section-gap">YOUR COLLECTION</p>
+        <nav class="nav-group" aria-label="Your collection">
+          <button class="nav-item" data-page="favorites"><span class="nav-icon" data-icon="heart"></span><span>Liked Songs</span></button>
+          <button class="nav-item" data-page="recent"><span class="nav-icon" data-icon="clock"></span><span>Recently Played</span></button>
+          <button class="nav-item" data-page="playlists"><span class="nav-icon" data-icon="playlist"></span><span>Playlists</span><span class="nav-count" id="navPlaylistCount">0</span></button>
+        </nav>
+
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="storage-mini">
+          <div class="storage-icon"><span data-icon="music"></span></div>
+          <div class="storage-copy"><strong id="storageCount">0 tracks</strong><span>Stored on this device</span></div>
+          <span class="storage-live" title="Offline and ready"></span>
+        </div>
+        <button class="new-playlist-btn" data-action="new-playlist"><span data-icon="plus"></span><span>New Playlist</span><span class="shortcut">+</span></button>
+        <button class="sidebar-settings" data-page="settings"><span class="nav-icon" data-icon="settings"></span><span>Settings</span><span class="nav-arrow">›</span></button>
+      </div>
+    </aside>
+
+    <main class="main-column">
+      <header class="topbar">
+        <div class="topbar-drag-surface pywebview-drag-region" aria-label="Hold and drag to move the window" title="Hold and drag to move the window"></div>
+        <div class="topbar-right">
+          <div class="offline-badge"><span></span>OFFLINE LIBRARY</div>
+          <div class="window-controls" dir="ltr" aria-label="Window controls">
+            <button class="window-control minimize" data-window="minimize" aria-label="Minimize" title="Minimize"><span></span></button>
+            <button class="window-control maximize" data-window="maximize" aria-label="Maximize / Restore" title="Maximize / Restore"><span></span></button>
+            <button class="window-control close" data-window="close" aria-label="Close" title="Close"><span></span></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-host" id="pageHost" aria-live="polite"></div>
+    </main>
+
+    <aside class="right-rail" id="rightRail"></aside>
+
+    <footer class="player-dock" id="playerDock">
+      <div class="dock-track" id="dockTrack">
+        <button class="dock-art-button" data-action="open-player" aria-label="Open player"><img class="dock-art" id="dockArt" alt="" src=""></button>
+        <div class="dock-track-copy"><strong id="dockTitle">Nothing selected</strong><span id="dockArtist">Choose a track from your library</span></div>
+        <button class="dock-heart" id="dockHeart" data-action="favorite-current" aria-label="Like current track"><span data-icon="heart"></span></button>
+      </div>
+      <div class="dock-center">
+        <div class="dock-controls">
+          <button class="control-quiet" data-action="shuffle" title="Shuffle"><span data-icon="shuffle"></span></button>
+          <button class="control-quiet" data-action="previous" title="Previous"><span data-icon="previous"></span></button>
+          <button class="dock-play" data-action="play-pause" aria-label="Play"><span data-icon="play"></span></button>
+          <button class="control-quiet" data-action="next" title="Next"><span data-icon="next"></span></button>
+          <button class="control-quiet" data-action="repeat" title="Repeat"><span data-icon="repeat"></span></button>
+        </div>
+        <div class="dock-progress-row"><span class="time-label" id="dockElapsed">0:00</span><div class="mini-progress" id="miniProgress" role="slider" aria-label="Track position" tabindex="0"><div class="mini-progress-fill" id="miniProgressFill"></div></div><span class="time-label" id="dockDuration">0:00</span></div>
+      </div>
+      <div class="dock-tools">
+        <button class="tool-button" data-action="show-lyrics" title="Lyrics"><span data-icon="lyrics"></span></button>
+        <button class="tool-button" data-action="queue" title="Queue"><span data-icon="queue"></span></button>
+        <span class="volume-icon" data-icon="volume"></span>
+        <input id="volumeSlider" class="volume-slider" type="range" min="0" max="100" value="72" aria-label="Volume">
+        <span class="volume-value" id="volumeValue">72%</span>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="audioEngine" preload="metadata"></audio>
+  <div id="modalLayer" class="modal-layer" hidden></div>
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+  <input id="folderPicker" type="file" webkitdirectory directory multiple hidden>
+  <input id="filePicker" type="file" accept="audio/*,.mp3,.wav,.ogg,.flac,.m4a,.aac,.opus,.wma" multiple hidden>
+  <input id="coverPicker" type="file" accept="image/*" hidden>
+  <script src="/app.js"></script>
+</body>
+</html>

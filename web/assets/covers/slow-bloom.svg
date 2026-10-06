@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#df9e88"/><stop offset=".5" stop-color="#e9c5a6"/><stop offset="1" stop-color="#809a8f"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#fff3d4"/><stop offset="1" stop-color="#fff3d4" stop-opacity="0"/></radialGradient>
+ <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#708c7d"/><stop offset="1" stop-color="#425f59"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<circle cx="355" cy="205" r="170" fill="url(#glow)"/>
+<circle cx="355" cy="205" r="76" fill="#fff0ce" opacity=".82"/>
+<path d="M0 360Q110 310 210 359T405 348T610 355V610H0Z" fill="#a97d79" opacity=".68"/>
+<path d="M0 409Q107 350 221 412T430 398T610 410V610H0Z" fill="url(#hill)"/>
+<path d="M0 458Q110 397 226 460T435 446T610 458" fill="none" stroke="#e9d9c1" stroke-opacity=".65" stroke-width="3"/>
+<g fill="#fff4df" opacity=".7"><circle cx="108" cy="113" r="2"/><circle cx="170" cy="163" r="1.5"/><circle cx="498" cy="104" r="2"/><circle cx="277" cy="93" r="1.7"/></g>
+<text x="42" y="526" fill="#fff8f0" font-family="Arial,sans-serif" font-size="27" letter-spacing="6">ECHODESK SESSIONS</text>
+<text x="42" y="563" fill="#fff8f0" font-family="Arial,sans-serif" font-size="16" letter-spacing="4" opacity=".76">04 — SLOW BLOOM</text>
+</svg>

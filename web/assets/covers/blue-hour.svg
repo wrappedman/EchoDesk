@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2=".92" y2="1"><stop stop-color="#202a56"/><stop offset=".55" stop-color="#556a9f"/><stop offset="1" stop-color="#dfa9b7"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#fff5dc"/><stop offset="1" stop-color="#fff5dc" stop-opacity="0"/></radialGradient>
+ <linearGradient id="mount" x2="0" y2="1"><stop stop-color="#596084"/><stop offset="1" stop-color="#222a4d"/></linearGradient>
+</defs>
+<rect width="600" height="600" fill="url(#bg)"/>
+<circle cx="425" cy="177" r="125" fill="url(#moon)"/>
+<circle cx="425" cy="177" r="62" fill="#fff1d7" opacity=".9"/>
+<g fill="#fff6df" opacity=".8"><circle cx="100" cy="108" r="2"/><circle cx="186" cy="72" r="2"/><circle cx="294" cy="143" r="1.5"/><circle cx="521" cy="83" r="2"/><circle cx="342" cy="62" r="1.5"/><circle cx="80" cy="210" r="1.5"/></g>
+<path d="M0 365 106 277l72 55 109-124 93 124 85-79 135 125v222H0Z" fill="#49527a" opacity=".85"/>
+<path d="M0 412 116 347l106 54 107-96 92 82 82-55 97 63v205H0Z" fill="url(#mount)"/>
+<path d="M0 458 Q130 411 248 456 T472 448 T600 461 V600H0Z" fill="#222844"/>
+<path d="M0 475 Q130 430 248 474 T472 465 T600 478" fill="none" stroke="#f4cfca" stroke-opacity=".62" stroke-width="3"/>
+<text x="42" y="526" fill="#fff8f0" font-family="Arial,sans-serif" font-size="27" letter-spacing="6">ECHODESK SESSIONS</text>
+<text x="42" y="563" fill="#fff8f0" font-family="Arial,sans-serif" font-size="16" letter-spacing="4" opacity=".76">02 — BLUE HOUR</text>
+</svg>
