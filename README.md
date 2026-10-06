@@ -1,4 +1,10 @@
+<p align="center"><img src="web/assets/echodesk-icon.png" width="112" alt="EchoDesk icon"></p>
+
 # EchoDesk
+
+<p align="center"><strong>A local-first desktop music player</strong></p>
+
+<p align="center"><a href="README.md">English</a> · <a href="README.fa.md">فارسی</a></p>
 
 EchoDesk 1.0.5 is a local-first music player built with HTML, CSS, and JavaScript, backed by a small Python API and a frameless pywebview desktop host. The English interface keeps the gray/charcoal/graphite visual direction, with a saved dark or light theme. The browser preview uses the same UI and API.
 
@@ -52,6 +58,17 @@ $env:ECHODESK_GOOGLE_CSE_ID = "your-search-engine-id"
 
 Configure the Programmable Search Engine to search the whole web if you want broad coverage. Google API quota and billing limits depend on your account. Only matching direct HTTPS MP3 URLs are shown; landing pages are filtered out. Google Dorks results remain marked **rights not verified**. Direct MP3 Play/Download is available by user request, and credentials do not imply permission to use the files.
 
+## Publish to GitHub (optional)
+
+On your own Windows computer, use a fresh extraction of the source ZIP and install Git for Windows and GitHub CLI. In PowerShell, from the project folder, run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass -Force
+.\publish_to_github.ps1
+```
+
+It uses `gh auth login --web` when needed; it never asks you to paste a PAT or stores a token in the project. The script defaults to a **private** repository, verifies the authenticated account, displays staged files for review, and asks for explicit confirmation before creating/pushing. It warns before a public upload if the contact email is present.
+
 ## Data locations
 
 - Windows: `%APPDATA%\EchoDesk`
@@ -66,16 +83,28 @@ The scanner indexes MP3, WAV, OGG/OGA, FLAC, M4A, AAC, OPUS, WMA, and AIFF. Play
 
 Online search requires an internet connection. Internet Archive/Openverse metadata can be incomplete or stale, so a displayed license is a helpful signal, not legal advice. Web-indexed direct MP3 URLs are not presumed authorized. Their rights label stays unverified, but the user can choose to stream or download the direct file and is responsible for confirming permission. Unsafe/private hosts and redirects are blocked; a source can still be unreachable or return a non-audio response.
 
-## Design previews
+## Visual previews
 
-`design-preview.png` and `design-search.png` are illustrative UI mockups showing the revised Home, three top-right window controls (minimize, maximize, close), and direct-MP3 result/rights-status states. The toolbar search and fullscreen control are absent. They are design references, not captured runtime screenshots.
+> These two files are illustrative design mockups, **not screenshots captured from a running Windows executable**. They show the Home/library layout and the direct-MP3 search/rights-warning states.
+
+![EchoDesk Home and library design preview](design-preview.png)
+
+![EchoDesk online-search design preview](design-search.png)
+
+## License
+
+No open-source license is included. A public GitHub repository without a license does not automatically grant reuse rights; choose and add a license only if you intend to grant those rights.
 
 ## Project structure
 
 ```text
 EchoDesk/
 ├── app.py                     # Local HTTP API, library services, web search, desktop host
+├── README.md                  # English documentation
+├── README.fa.md               # Persian documentation
 ├── CHANGELOG.md               # Release notes
+├── .gitignore                 # Excludes credentials, caches, and build artifacts
+├── publish_to_github.ps1      # Optional local GitHub CLI publishing helper
 ├── web/
 │   ├── index.html
 │   ├── styles.css
